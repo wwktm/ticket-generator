@@ -32,3 +32,8 @@ body json
 }
 
 ```
+
+## TODO
+
+[ ] sending email
+[ ] cleaning design "path : server/template/mail1.hbs
