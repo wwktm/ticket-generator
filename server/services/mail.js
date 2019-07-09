@@ -3,8 +3,8 @@ var nodemailer = require("nodemailer");
 var transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: "thapa.manish16@gmail.com",
-    pass: "pass"
+    user: process.env.MAIL_USER,
+    pass: process.env.MAIL_PASSWORD
   }
 });
 
@@ -17,8 +17,10 @@ const mailOptions = {
 };
 */
 
-var sendMail = function(mailOptions, fn) {
-  transporter.sendMail(mailOptions, fn(err, info));
+var sendMail = function(mailOptions, callback) {
+  transporter.sendMail(mailOptions, callback);
 };
 
-export default sendMail;
+module.exports = {
+  sendMail: sendMail
+};

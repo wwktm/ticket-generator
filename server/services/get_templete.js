@@ -3,7 +3,7 @@ var fs = require("fs");
 
 var source = "";
 // read the file and use the callback to render
-fs.readFile(__dirname + "/../template/mail1.hbs", function(err, data) {
+fs.readFile(__dirname + "/../template/mail2.hbs", function(err, data) {
   if (!err) {
     // make the buffer into a string
     source = data.toString();

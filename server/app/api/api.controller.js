@@ -5,6 +5,7 @@ var qr = require("../../services/qr_code");
 
 var JwtHandler = require("../../services/jwt_handlers");
 var dbHandler = require("../../services/db.service");
+var mail = require("../../services/mail");
 var emailTemplate = require("../../services/get_templete");
 
 router.get("/:email", function(req, res) {
@@ -29,7 +30,7 @@ router.get("/:email", function(req, res) {
   return res.send(html);
 });
 
-router.post("/create", function(req, res) {
+router.post("/create", async function(req, res) {
   var body = req.body;
   // console.log(body);
   if (
@@ -48,14 +49,15 @@ router.post("/create", function(req, res) {
 
   var texts = {
     name: req.body["full-name"],
-    email: req.body.email
+    email: req.body["email-address"]
   };
 
-  var token = JwtHandler.createJwt(texts);
+  var token = await JwtHandler.createJwt(texts);
   //   res.type("png");
 
-  var img = qr.createQr(token).toString("base64");
+  var img = await qr.createQr(token).toString("base64");
   //   var html = '<img src="data:image/png;base64,' + img + '" />';
+  // console.log(img);
   var data = {
     name: req.body.name,
     token: token,
@@ -64,15 +66,37 @@ router.post("/create", function(req, res) {
 
   var html = emailTemplate(data);
 
-  dbHandler.storeToDb(req.body, function(err, response) {
+  const mailOptions = {
+    from: "thapa.manish16@gmail.com", // sender address
+    to: req.body["email-address"], // list of receivers
+    subject: "Tickets wwktm", // Subject line
+    html: html,
+    attachments: [
+      {
+        // encoded string as an attachment
+        filename: "qr-code.jpg",
+        content: img,
+        encoding: "base64"
+      }
+    ]
+  };
+
+  mail.sendMail(mailOptions, function(err, response) {
     if (err) {
       console.log(err);
-      return "db error";
+      return res.send("could not send email");
     }
-    console.log("save to db");
+    dbHandler.storeToDb(req.body, function(err, response) {
+      if (err) {
+        console.log(err);
+        return "db error";
+      }
+      console.log("save to db");
+      return res.send(html);
+    });
   });
 
-  return res.send(html);
+  // return res.send(html);
 });
 
 module.exports = router;
