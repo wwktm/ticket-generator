@@ -7,6 +7,8 @@ var JwtHandler = require("../../services/jwt_handlers");
 var dbHandler = require("../../services/db.service");
 var mail = require("../../services/mail");
 var emailTemplate = require("../../services/get_templete");
+var pdfTemplate = require("../../services/get_pdf_template");
+var getPdfBuffer = require("../../services/pdf.service");
 
 router.get("/:email", function(req, res) {
   var email = req.params.email;
@@ -65,6 +67,9 @@ router.post("/create", async function(req, res) {
   };
 
   var html = emailTemplate(data);
+  var pdfHtml = pdfTemplate(data);
+
+  var pdfBuffer = await getPdfBuffer.createPdf(pdfHtml);
 
   const mailOptions = {
     from: "thapa.manish16@gmail.com", // sender address
@@ -76,6 +81,12 @@ router.post("/create", async function(req, res) {
         // encoded string as an attachment
         filename: "qr-code.jpg",
         content: img,
+        encoding: "base64"
+      },
+      {
+        // encoded string as an attachment
+        filename: "qr-code.pdf",
+        content: pdfBuffer,
         encoding: "base64"
       }
     ]
