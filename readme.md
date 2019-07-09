@@ -3,7 +3,10 @@
 environment file
 
 ```
-JWT_SECRET=secretkey
+JWT_SECRET=secret
+MAIL_USER=xyz@xyz.com
+MAIL_PASSWORD=password
+MONGO_STRING=mongostring
 ```
 
 ## install dependencies
@@ -26,14 +29,13 @@ POST /api/create
 body json
 
 {
-	"name" : "name",
-	"email" : "email",
-	"info" : "more"
+	"full-name" : "name",
+	"email-address" : "email",
 }
 
 ```
 
 ## TODO
 
-- [ ] sending email
-- [ ] cleaning design "path : server/template/mail1.hbs
+- [*] sending email
+- [ ] cleaning design and text "path : server/template/mail2.hbs
