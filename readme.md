@@ -37,5 +37,5 @@ body json
 
 ## TODO
 
-- [*] sending email
+- [x] sending email
 - [ ] cleaning design and text "path : server/template/mail2.hbs
