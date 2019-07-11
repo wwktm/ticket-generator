@@ -1,5 +1,6 @@
 var express = require("express");
 var router = express.Router();
+const uuidv1 = require('uuid/v1');
 
 var qr = require("../../services/qr_code");
 
@@ -51,17 +52,21 @@ router.post("/create", async function(req, res) {
 
   var texts = {
     name: req.body["full-name"],
-    email: req.body["email-address"]
+    email: req.body["email-address"],
+    uuid: uuidv1()
   };
 
   var token = await JwtHandler.createJwt(texts);
   //   res.type("png");
 
+  console.log(token);
+
   var img = await qr.createQr(token).toString("base64");
   //   var html = '<img src="data:image/png;base64,' + img + '" />';
   // console.log(img);
   var data = {
-    name: req.body.name,
+    name: req.body["full-name"],
+    email: req.body["email-address"],
     token: token,
     imgBase64: img
   };
@@ -72,9 +77,9 @@ router.post("/create", async function(req, res) {
   var pdfBuffer = await getPdfBuffer.createPdf(pdfHtml);
 
   const mailOptions = {
-    from: "thapa.manish16@gmail.com", // sender address
+    from: "tickets@wwktm.co", // sender address
     to: req.body["email-address"], // list of receivers
-    subject: "Tickets wwktm", // Subject line
+    subject: "Ticket to Web Weekend 2019 - wwktm", // Subject line
     html: html,
     attachments: [
       {
@@ -97,7 +102,7 @@ router.post("/create", async function(req, res) {
       console.log(err);
       return res.send("could not send email");
     }
-    dbHandler.storeToDb(req.body, function(err, response) {
+    dbHandler.storeToDb(texts, function(err, response) {
       if (err) {
         console.log(err);
         return "db error";
