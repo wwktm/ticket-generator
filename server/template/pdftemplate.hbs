@@ -1,26 +1,474 @@
-<table role="presentation" border="0" cellpadding="0" cellspacing="0">
-    <tr>
-        <td>
-            <p>Hi {{name}},</p>
-            <p><b>tickets</b> </p>
-            <p>{{token}}</p>
-            <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="btn btn-primary">
-                <tbody>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+  <head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ticket wwktm</title>
+    
+  <style type="text/css">
+		p{
+			margin:1em 0;
+			padding:0;
+		}
+		table{
+			border-collapse:collapse;
+		}
+		h1,h2,h3,h4,h5,h6{
+			display:block;
+			margin:0;
+			padding:0;
+		}
+		img,a img{
+			border:0;
+			height:auto;
+			outline:none;
+			text-decoration:none;
+		}
+		body,#bodyTable,#bodyCell{
+			height:100%;
+			margin:0;
+			padding:0;
+			width:100%;
+		}
+		#outlook a{
+			padding:0;
+		}
+		img{
+			-ms-interpolation-mode:bicubic;
+		}
+		table{
+			mso-table-lspace:0;
+			mso-table-rspace:0;
+		}
+		.ReadMsgBody{
+			width:100%;
+		}
+		.ExternalClass{
+			width:100%;
+		}
+		p,a,li,td,blockquote{
+			mso-line-height-rule:exactly;
+		}
+		a[href^=tel],a[href^=sms]{
+			color:inherit;
+			cursor:default;
+			text-decoration:none;
+		}
+		p,a,li,td,body,table,blockquote{
+			-ms-text-size-adjust:100%;
+			-webkit-text-size-adjust:100%;
+		}
+		.ExternalClass,.ExternalClass p,.ExternalClass td,.ExternalClass div,.ExternalClass span,.ExternalClass font{
+			line-height:100%;
+		}
+		a[x-apple-data-detectors]{
+			color:inherit !important;
+			text-decoration:none !important;
+			font-size:inherit !important;
+			font-family:inherit !important;
+			font-weight:inherit !important;
+			line-height:inherit !important;
+		}
+		#bodyCell{
+			padding:20px 9px 9px;
+		}
+		.templateImage{
+			height:auto;
+			max-width:564px;
+		}
+		.templateContainer{
+			max-width:600px !important;
+		}
+		#templatePreheader{
+			padding-right:9px;
+			padding-left:9px;
+		}
+		#templatePreheader .columnContainer td{
+			padding:0 9px;
+		}
+		#footerContent{
+			padding-top:27px;
+			padding-bottom:18px;
+		}
+		#templateHeader,#templateBody,#templateFooter{
+			padding-right:18px;
+			padding-left:18px;
+		}
+	/*
+	@tab Page
+	@section Background Style
+	*/
+		body,#bodyTable{
+			/*@editable*/background-color:#F4F1E9;
+		}
+	/*
+	@tab Page
+	@section Email Border
+	*/
+		.templateContainer{
+			/*@editable*/border:0;
+		}
+	/*
+	@tab Page
+	@section Heading 1
+	*/
+		h1{
+			/*@editable*/color:#222222;
+			/*@editable*/font-family:Helvetica;
+			/*@editable*/font-size:40px;
+			/*@editable*/font-style:normal;
+			/*@editable*/font-weight:bold;
+			/*@editable*/line-height:150%;
+			/*@editable*/letter-spacing:normal;
+			/*@editable*/text-align:left;
+		}
+	/*
+	@tab Page
+	@section Heading 2
+	*/
+		h2{
+			/*@editable*/color:#222222;
+			/*@editable*/font-family:Helvetica;
+			/*@editable*/font-size:28px;
+			/*@editable*/font-style:normal;
+			/*@editable*/font-weight:bold;
+			/*@editable*/line-height:150%;
+			/*@editable*/letter-spacing:normal;
+			/*@editable*/text-align:left;
+		}
+	/*
+	@tab Page
+	@section Heading 3
+	*/
+		h3{
+			/*@editable*/color:#444444;
+			/*@editable*/font-family:Helvetica;
+			/*@editable*/font-size:22px;
+			/*@editable*/font-style:normal;
+			/*@editable*/font-weight:bold;
+			/*@editable*/line-height:150%;
+			/*@editable*/letter-spacing:normal;
+			/*@editable*/text-align:left;
+		}
+	/*
+	@tab Page
+	@section Heading 4
+	*/
+		h4{
+			/*@editable*/color:#999999;
+			/*@editable*/font-family:Georgia;
+			/*@editable*/font-size:20px;
+			/*@editable*/font-style:italic;
+			/*@editable*/font-weight:normal;
+			/*@editable*/line-height:150%;
+			/*@editable*/letter-spacing:normal;
+			/*@editable*/text-align:left;
+		}
+	/*
+	@tab Preheader
+	@section Preheader Style
+	*/
+		#templatePreheader{
+			/*@editable*/background-color:#FAFAFA;
+			/*@editable*/background-image:none;
+			/*@editable*/background-repeat:no-repeat;
+			/*@editable*/background-position:center;
+			/*@editable*/background-size:cover;
+			/*@editable*/border-top:0;
+			/*@editable*/border-bottom:0;
+			/*@editable*/padding-top:9px;
+			/*@editable*/padding-bottom:9px;
+		}
+	/*
+	@tab Preheader
+	@section Preheader Text
+	*/
+		#templatePreheader,#templatePreheader p{
+			/*@editable*/color:#656565;
+			/*@editable*/font-family:Helvetica;
+			/*@editable*/font-size:12px;
+			/*@editable*/line-height:150%;
+			/*@editable*/text-align:left;
+		}
+	/*
+	@tab Preheader
+	@section Preheader Link
+	*/
+		#templatePreheader a,#templatePreheader p a{
+			/*@editable*/color:#656565;
+			/*@editable*/font-weight:normal;
+			/*@editable*/text-decoration:underline;
+		}
+	/*
+	@tab Header
+	@section Header Style
+	*/
+		#templateLogo{
+			/*@editable*/background-color:#F3E7DC;
+			/*@editable*/background-image:url(https://gallery.mailchimp.com/86f98e6984113b750376bd471/images/dcd3cc54-982c-4523-99ec-fab7bb2f32c3.jpg);
+			/*@editable*/border-bottom:0;
+			/*@editable*/padding:40px 18px;
+		}
+		#templateHeader{
+			/*@editable*/background-color:#FFFFFF;
+			/*@editable*/background-image:none;
+			/*@editable*/background-repeat:no-repeat;
+			/*@editable*/background-position:center;
+			/*@editable*/background-size:cover;
+			/*@editable*/border-top:0;
+			/*@editable*/border-bottom:0;
+			/*@editable*/padding-top:18px;
+			/*@editable*/padding-bottom:0;
+		}
+	/*
+	@tab Header
+	@section Header Text
+	*/
+		#templateHeader,#templateHeader p{
+			/*@editable*/color:#292929;
+			/*@editable*/font-family:Helvetica;
+			/*@editable*/font-size:16px;
+			/*@editable*/line-height:150%;
+			/*@editable*/text-align:left;
+		}
+	/*
+	@tab Header
+	@section Header Link
+	*/
+		#templateHeader a,#templateHeader p a{
+			/*@editable*/color:#292929;
+			/*@editable*/font-weight:normal;
+			/*@editable*/text-decoration:underline;
+		}
+	/*
+	@tab Body
+	@section Body Style
+	*/
+		#templateBody,.templateBody{
+			/*@editable*/background-color:#FFFFFF;
+			/*@editable*/background-image:none;
+			/*@editable*/background-repeat:no-repeat;
+			/*@editable*/background-position:center;
+			/*@editable*/background-size:cover;
+			/*@editable*/border-top:0;
+			/*@editable*/padding-top:0;
+			/*@editable*/padding-bottom:9px;
+		}
+		.templateBody{
+			border-bottom:none;
+		}
+	/*
+	@tab Body
+	@section Body Text
+	*/
+		#templateBody,#templateBody p{
+			/*@editable*/color:#292929;
+			/*@editable*/font-family:Helvetica;
+			/*@editable*/font-size:16px;
+			/*@editable*/line-height:160%;
+			/*@editable*/text-align:left;
+		}
+	/*
+	@tab Body
+	@section Body Link
+	*/
+		#templateBody a,#templateBody p a{
+			/*@editable*/color:#45BEF4;
+			/*@editable*/font-weight:bold;
+			/*@editable*/text-decoration:underline;
+		}
+	/*
+	@tab Footer
+	@section Footer Style
+	*/
+		#templateFooter{
+			/*@editable*/background-image:none;
+			/*@editable*/background-repeat:no-repeat;
+			/*@editable*/background-position:center;
+			/*@editable*/background-size:cover;
+			/*@editable*/border-top:0;
+			/*@editable*/border-bottom:0;
+			/*@editable*/padding-top:36px;
+			/*@editable*/padding-bottom:9px;
+		}
+	/*
+	@tab Footer
+	@section Social Bar Text
+	*/
+		#socialBar,#socialBar p{
+			/*@editable*/color:#333333;
+			/*@editable*/font-family:Helvetica;
+			/*@editable*/font-size:12px;
+			/*@editable*/line-height:150%;
+			/*@editable*/text-align:center;
+		}
+	/*
+	@tab Footer
+	@section Social Bar Link
+	*/
+		#socialBar a,#socialBar p a{
+			/*@editable*/color:#333333;
+			/*@editable*/font-weight:normal;
+			/*@editable*/text-decoration:underline;
+		}
+	/*
+	@tab Footer
+	@section Footer Text
+	*/
+		#footerContent,#footerContent p{
+			/*@editable*/color:#656565;
+			/*@editable*/font-family:Helvetica;
+			/*@editable*/font-size:12px;
+			/*@editable*/line-height:150%;
+			/*@editable*/text-align:center;
+		}
+	/*
+	@tab Footer
+	@section Footer Link
+	*/
+		#footerContent a,#footerContent p a{
+			/*@editable*/color:#656565;
+			/*@editable*/font-weight:normal;
+			/*@editable*/text-decoration:underline;
+		}
+	/*
+	@tab Footer
+	@section Utility Bar Style
+	*/
+		#utilityBar{
+			/*@editable*/border:0;
+			/*@editable*/padding-top:9px;
+			/*@editable*/padding-bottom:9px;
+		}
+	/*
+	@tab Footer
+	@section Utility Bar Text
+	*/
+		#utilityBar,#utilityBar p{
+			/*@editable*/color:#656565;
+			/*@editable*/font-family:Helvetica;
+			/*@editable*/font-size:12px;
+			/*@editable*/line-height:150%;
+			/*@editable*/text-align:center;
+		}
+	/*
+	@tab Footer
+	@section Utility Bar Link
+	*/
+		#utilityBar a,#utilityBar p a{
+			/*@editable*/color:#656565;
+			/*@editable*/font-weight:normal;
+			/*@editable*/text-decoration:underline;
+		}
+
+    .dont-break-out {
+        /* These are technically the same, but use both */
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+
+        -ms-word-break: break-all;
+        /* This is the dangerous one in WebKit, as it breaks things wherever */
+        word-break: break-all;
+        /* Instead use this non-standard one: */
+        word-break: break-word;
+
+        /* Adds a hyphen where the word breaks, if supported (No Blink) */
+        -ms-hyphens: auto;
+        -moz-hyphens: auto;
+        -webkit-hyphens: auto;
+        hyphens: auto;
+
+        }
+</style>
+</head>
+  <body>
+    <center>
+      <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" id="bodyTable" style="height:100%;">
+        <tr>
+          <td align="center" height="20" valign="top" style="background:#FF7D4A;">
+          </td>
+        </tr>
+        <tr>
+          <td align="center" height="10">
+          </td>
+        </tr>
+        <tr>
+          <td align="center" valign="top" id="bodyCell">
+            
+            <table border="0" cellpadding="0" cellspacing="0" width="100%" class="templateContainer">
+              <!-- BEGIN PREHEADER // -->
+              <tr>
+                <td valign="top" id="templatePreheader">
+                  <!-- BEGIN MODULE: STANDARD PREHEADER // -->
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
                     <tr>
-                        <td align="center">
-                            <table role="presentation" border="0" cellpadding="0" cellspacing="0">
-                                <tbody>
-                                    <tr>
-                                        <td> <img src="data:image/png;base64,{{imgBase64}}" alt=""></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <p>Show this ticket </p>
-            <p>wwktm</p>
+                      <td valign="top">
+                       
+                        <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width:384px;" width="100%" class="columnContainer">
+                          <tr>
+                            <td valign="top">
+                              <div mc:edit="preheader_leftcol_content">
+								<h4>Tickets #wwktm2019</h4>
+                              </div>
+                            </td>
+                          </tr>
+                        </table>
+                    </td>
+                  </tr>
+                </table>
+                <!-- // END MODULE: STANDARD PREHEADER -->
+              </td>
+            </tr>
+            <!-- // END PREHEADER -->
+            <!-- BEGIN HEADER // -->
+            <tr>
+              <td valign="top" id="templateLogo">
+                <a href="https://2019.wwktm.co" target="_blank"><img src="https://gallery.mailchimp.com/86f98e6984113b750376bd471/images/78cc468c-eaa0-48ad-b528-095755f5efd7.png" style="max-width:207px;" class="templateLogoImage" mc:label="templateLogoImage" mc:edit="templatelogoimage" mc:allowdesigner="" mc:allowtext="" alt="78cc468c-eaa0-48ad-b528-095755f5efd7.png"></a>
+              </td>
+            </tr>
+            <!-- // END HEADER -->
+            <tr>
+              <td valign="top" height="15" class="templateBody">
+              </td>
+            </tr>
+            <!-- BEGIN BODY // -->
+            <tr>
+              <td valign="top" id="templateBody">
+                <!-- BEGIN MODULE: BODY CONTENT // -->
+                <div mc:edit="body_content">
+				  <p>{{name}}</p>
+				  <p>Ticket to Web Weekend Kathmandu</p>
+                  <p>Present this in a digital or printed form to get attendance to the conference.</p>
+				<table role="presentation" border="0" cellpadding="0" cellspacing="0">
+					<tbody>
+						<tr style="text-align: center">
+							<td> <img src="data:image/png;base64,{{imgBase64}}" alt="(doesn’t work, check the attached PDF)"></td>
+						</tr>
+					</tbody>
+                </table>
+                <hr>
+                  <p>Keep it safe</p>
+                  
+
+
+                </div>
+                <!-- // END MODULE: BODY CONTENT -->
+              </td>
+            </tr>
+            <!-- // END BODY -->
+            
+          </table>
+          <!--[if gte mso 9]>
         </td>
-    </tr>
-</table>
+      </tr>
+    </table>
+    <![endif]-->
+          <!-- // END TEMPLATE -->
+        </td>
+      </tr>
+    </table>
+  </center>
+</body>
+</html>

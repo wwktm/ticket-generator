@@ -1,7 +1,12 @@
 var nodemailer = require("nodemailer");
 
+console.log("password",process.env.MAIL_PASSWORD);
+
 var transporter = nodemailer.createTransport({
-  service: "gmail",
+  service : "webhosting",
+  host: "server213.web-hosting.com",
+  port: 465,
+  secure: true,
   auth: {
     user: process.env.MAIL_USER,
     pass: process.env.MAIL_PASSWORD
