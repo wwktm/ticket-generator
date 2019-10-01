@@ -3,8 +3,8 @@ var nodemailer = require("nodemailer");
 console.log("password",process.env.MAIL_PASSWORD);
 
 var transporter = nodemailer.createTransport({
-  service : "webhosting",
-  host: "server213.web-hosting.com",
+  service : "xyz",
+  host: "server2.test.com",
   port: 465,
   secure: true,
   auth: {
