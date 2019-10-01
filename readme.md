@@ -1,38 +1,34 @@
-## .env file
-
-environment file
+## Environment variables
 
 ```
-JWT_SECRET=secret
-MAIL_USER=xyz@xyz.com
-MAIL_PASSWORD=password
-MONGO_STRING=mongostring
+JWT_SECRET=<secret>
+MAIL_USER=<user-email@xyz.com>
+MAIL_PASSWORD=<password>
+MONGO_STRING=<mongo-connection-string>
 ```
 
-## install dependencies
+## Steps to run
 
-```
-$ npm install
-```
+1. Install dependencies 
+	```
+	$ npm install
+	```
+2. Run the server
+	```
+	$ node server.js
+	```
 
-## run
+## Usage
 
-```
-$ node server.js
-```
-
-## Generate email
-
+Generate email
 ```
 POST /api/create
 
 body json
-
 {
 	"full-name" : "name",
 	"email-address" : "email",
 }
-
 ```
 
 ## TODO
