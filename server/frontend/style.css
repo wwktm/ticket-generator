@@ -1,0 +1,25 @@
+body {
+    background-color: #FFFFFF;
+}
+header {
+    background-color: #EEEEEE;
+    box-shadow: 3px 3px 3px lightgrey;
+    padding: 0.7rem;
+}
+main {
+    padding: 1rem;
+}
+footer {
+    background-color: #EEEEEE;
+    padding: 0.7rem;
+}
+td, th {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+button {
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+}
